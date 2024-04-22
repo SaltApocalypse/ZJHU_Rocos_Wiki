@@ -17,7 +17,7 @@ description: 机器人 (player & enemy) 相关接口。
 
 ## 属性相关
 
-### 
+### 名字
 
 - 详情：返回机器人的**名字 (string)**
 
@@ -36,7 +36,7 @@ player.name(role)
 
 :::
 
-### 
+### 车号
 
 - 详情：返回机器人的**车号 (int)**
 
@@ -64,7 +64,7 @@ player.num(role)
 @tab lua
 
 ```lua
-
+player.vaild(role)
 ```
 
 @tab cpp
@@ -327,7 +327,7 @@ player.rawVelMod(role)
 
 :::
 
-### 
+<!-- ### 
 
 - 详情：返回机器人的
 
@@ -344,4 +344,4 @@ player.rawVelMod(role)
 ```cpp
 ```
 
-:::
+::: -->

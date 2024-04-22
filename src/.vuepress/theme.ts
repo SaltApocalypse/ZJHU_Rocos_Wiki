@@ -1,6 +1,7 @@
 import { hopeTheme } from "vuepress-theme-hope";
 import navbar from "./navbar.js";
 import sidebar from "./sidebar.js";
+import { docsearchPlugin } from '@vuepress/plugin-docsearch'
 
 export default hopeTheme({
   hostname: "https://rocos.salta.top",
@@ -14,7 +15,7 @@ export default hopeTheme({
 
   logo: "https://theme-hope-assets.vuejs.press/logo.svg",
 
-  repo: "vuepress-theme-hope/vuepress-theme-hope",
+  repo: "SaltApocalypse/ZJHU_Rocos_Wiki",
 
   docsDir: "src",
 
