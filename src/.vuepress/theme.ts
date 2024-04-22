@@ -3,14 +3,14 @@ import navbar from "./navbar.js";
 import sidebar from "./sidebar.js";
 
 export default hopeTheme({
-  hostname: "https://vuepress-theme-hope-docs-demo.netlify.app",
+  hostname: "https://rocos.salta.top",
 
   author: {
-    name: "Mr.Hope",
-    url: "https://mister-hope.com",
+    name: "ZJHU",
+    url: "https://rocos.salta.top",
   },
-
-  iconAssets: "fontawesome-with-brands",
+  // "iconfont", "iconify", "fontawesome", "fontawesome-with-brands"
+  iconAssets: "iconify",
 
   logo: "https://theme-hope-assets.vuejs.press/logo.svg",
 
@@ -25,13 +25,13 @@ export default hopeTheme({
   sidebar,
 
   // 页脚
-  footer: "默认页脚",
+  footer: "Let's Rocos!",
   displayFooter: true,
 
   // 加密配置
   encrypt: {
     config: {
-      "/demo/encrypt.html": ["1234"],
+      // "/demo/encrypt.html": ["1234"],
     },
   },
 
@@ -48,10 +48,10 @@ export default hopeTheme({
     // 注意: 仅用于测试! 你必须自行生成并在生产环境中使用自己的评论服务
     comment: {
       provider: "Giscus",
-      repo: "vuepress-theme-hope/giscus-discussions",
-      repoId: "R_kgDOG_Pt2A",
+      repo: "SaltApocalypse/ZJHU_Rocos_Wiki",
+      repoId: "R_kgDOLxaO6Q",
       category: "Announcements",
-      categoryId: "DIC_kwDOG_Pt2M4COD69",
+      categoryId: "DIC_kwDOLxaO6c4Ce2M",
     },
 
     components: {
