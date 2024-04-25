@@ -1,5 +1,5 @@
 ---
-title: 机器人 (player & enemy) 相关
+title: 机器人 (player & enemy)
 description: 机器人 (player & enemy) 相关接口。
 ---
 
@@ -14,6 +14,8 @@ description: 机器人 (player & enemy) 相关接口。
 - **在 cpp 函数中**，需要调用视觉模块`pVision`来获取信息。
 
 - 在文档中不会特意区分不同语言的语法，能看懂即可，如 cpp 中的`int`与 lua 中的`interger`；需要注意时会特别标注。
+
+- TODO: cpp的还没写。
 
 ## 属性相关
 

@@ -7,7 +7,7 @@ heroImage: https://theme-hope-assets.vuejs.press/logo.svg
 # bgImageDark: https://theme-hope-assets.vuejs.press/bg/6-dark.svg
 bgImageStyle:
   background-attachment: fixed
-heroText: Homepage
+heroText: Let's Rocos!
 tagline: Unofficial Rocos' Wiki for ZJHU.
 actions:
   - text: 接口文档
