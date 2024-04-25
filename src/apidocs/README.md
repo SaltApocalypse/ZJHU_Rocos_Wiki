@@ -8,3 +8,7 @@ comment: false
 <!-- more -->
 
 列出了部分常用的接口，方便查询使用。
+
+<div class="catalog-display-container">
+  <Catalog base='/apidocs/' />
+</div>
