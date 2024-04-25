@@ -19,24 +19,6 @@ description: 机器人 (player & enemy) 相关接口。
 
 ## 属性相关
 
-### 名字
-
-- 详情：返回机器人的**名字 (string)**
-
-::: code-tabs#shell
-
-@tab lua
-
-```lua
-player.name(role)
-```
-
-@tab cpp
-
-```cpp
-```
-
-:::
 
 ### 车号
 

@@ -58,6 +58,39 @@ CVector(const CVector &v)
     - `CVector operator/(double a)` 返回当前向量的`x, y`除以`a`。
     - `CVector operator-()` 返回当前向量的负。
 
+::: code-tabs#shell
+@tab lua
+```lua
+-- 使用方法
+local vel = CVector(x1, y1)
+
+-- mod()
+local velMod = vel:mod()
+
+-- dir()
+local veldir = vel:dir()
+
+-- x,y
+local vel1X = vel:x()
+local vel1Y = vel:y()
+```
+
+@tab cpp
+```cpp
+// 使用方法
+CVector vel = CVector(x, y)
+
+// mod()
+double velMod = vel1.mod()
+
+// dir()
+double veldir = vel.dir()
+
+// x,y
+double velX = vel.x()
+double velY = vel.y()
+```
+:::
 ### CGeoPoint
 
 - 坐标点。
@@ -93,9 +126,42 @@ CGeoPoint(const CGeoPoint &p)
     - `CGeoPoint midPoint(const CGeoPoint &p)` 返回传入坐标与当前坐标的中点坐标。
     - `bool operator==(const CGeoPoint &rhs)` 返回当前坐标与传入坐标是否相同。
     - `CGeoPoint operator+(const CVector &v)` 返回传入坐标与当前坐标的和。
-    - `CGeoPoint operator-(const CVector &v)` 返回传入坐标与当前坐标的差。
+    - `CVector operator-(const CVector &v)` 返回传入坐标与当前坐标的差。
     - `CGeoPoint operator*(const double &a)` 返回当前坐标的`x, y`乘上`a`。
 
+::: code-tabs#shell
+@tab lua
+```lua
+-- 使用方法
+local point1 = CGeoPoint(x1, y1)
+local point2 = CGeoPoint(x2, y2)
+
+-- 我们仔细观察可以发现两个 CGeoPoint 相减之后的类型是 CVector 
+-- 所以我们相减过后可以调用 CVector 的方法 
+-- 例如 mod()
+local mod = (point1 - point2):mod()
+
+-- dist()
+local dist = point1:dist(point2)
+-- 其实 mod == dist
+```
+
+@tab cpp
+```cpp
+// 使用方法
+CGeoPoint point1 = CGeoPoint(x1, y1);
+CGeoPoint point2 = CGeoPoint(x2, y2);
+
+// 我们仔细观察可以发现两个 CGeoPoint 相减之后的类型是 CVector 
+// 所以我们相减过后可以调用 CVector 的方法 
+// 例如 mod()
+double mod = (point1 - point2).mod();
+
+// dist()
+double dist = point1.dist(point2);
+// 其实 mod == dist
+```
+:::
 ### CGeoLine
 
 - 直线（区别于[线段](#cgeosegment)）。
@@ -113,7 +179,8 @@ CGeoPoint(const CGeoPoint &p)
 @tab lua
 ```lua
 -- 传入直线的起点和直线的方向
-local line = CGeoLine(point, dir)
+local line1 = CGeoLine(point1, point2)
+local line2 = CGeoLine(point, dir)
 ```
 
 @tab cpp
@@ -121,7 +188,7 @@ local line = CGeoLine(point, dir)
 CGeoLine() {}
 // 传入直线的两个坐标
 CGeoLine(const CGeoPoint &p1, const CGeoPoint &p2)
-// 传入直线的起点和直线的方向
+// 传入直线的起点和直线的方向(射线)
 CGeoLine(const CGeoPoint &p, double angle)
 ```
 :::
@@ -136,6 +203,42 @@ CGeoLine(const CGeoPoint &p, double angle)
     - `CGeoPoint point1()` 返回点 1。
     - `CGeoPoint point2()` 返回点 2。
     - `bool operator==(const CGeoLine &rhs)` 返回当前实现是否与传入直线相同。
+
+::: code-tabs#shell
+@tab lua
+```lua
+-- 使用方法
+local line = CGeoLine(point1, point2)
+
+-- projection()
+local projectionPos = line:projection(point3)
+
+-- point1,point2
+local point1 = line:point1()
+local point2 = line:point2()
+```
+
+@tab cpp
+```cpp
+// 使用方法
+CVector vel = CVector(x, y)
+
+// mod()
+double velMod = vel1.mod()
+
+// dir()
+double veldir = vel.dir()
+
+// x,y
+double velX = vel.x()
+double velY = vel.y()
+```
+:::
+
+
+
+
+
 
 ### CGeoLineLineIntersection
 
@@ -226,3 +329,8 @@ CGeoSegment(const CGeoPoint &p1, const CGeoPoint &p2)
     ```cpp
     ```
     :::
+
+## 总结
+
+- 在 lua 中我们想要使用几何相关的数据类型及其方法，可以去 geometry.pkg 中查阅 并根据具体的定义去正确使用。
+- c++ 则需要到相应的 .h 或 .cpp 文件中查阅
