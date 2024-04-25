@@ -2,7 +2,9 @@
 home: true
 icon: material-symbols:home
 title: 主页
-heroImage: https://theme-hope-assets.vuejs.press/logo.svg
+heroImage: https://cdn.jsdelivr.net/gh/saltapocalypse/CDN/ZJHU_Rocos_Wiki/logo_TuringZeroRobotics_Rocos@0.5x.png
+# FIXME: 这个大小尺寸不对啊
+# TODO: 首页还有个小logo到时候改掉，然后还有缩页icon
 bgImage: https://theme-hope-assets.vuejs.press/bg/6-light.svg
 bgImageDark: https://theme-hope-assets.vuejs.press/bg/6-dark.svg
 bgImageStyle:
@@ -10,13 +12,14 @@ bgImageStyle:
 heroText: Let's Rocos!
 tagline: Unofficial Rocos' Wiki for ZJHU.
 actions:
+  - text: 部署教程
+    icon: material-symbols:developer-guide-outline
+    link: ./other/setup.md
+    type: primary
+
   - text: Rocos 官方文档
     icon: entypo-social:github
     link: https://rocos.readthedocs.io/zh-cn/latest/
-
-  - text: 部署教程
-    icon: lightbulb
-    link: ./other/setup.md
 
 highlights:
   - header: 最近消息
