@@ -6,9 +6,10 @@ author: umbrella
 
 <!-- more -->
 
->[!warning]
->面向维护人员：本页仍存在不完善之处，已用`TODO`标记。
->   - 几处的 cpp 没加进去 - SaltA 240426
+::: warning 面向维护人员
+本页仍存在不完善之处，已用`TODO`标记。
+- 几处的 cpp 没加进去 - SaltA 240426
+:::
 
 ## 平面相关
 
@@ -36,13 +37,13 @@ local ballPosY = ball.pos():y()
 @tab cpp
 ```cpp
 // 获取球的坐标
-pVision -> ball().pos();
+pVision -> ball().Pos();
 
 // 获取球的X坐标
-pVision -> ball().pos().x();
+pVision -> ball().Pos().x();
 
 // 获取球的Y坐标
-pVision -> ball().pos().y();
+pVision -> ball().Pos().y();
 ```
 :::
 
@@ -58,7 +59,8 @@ local ballRawPos = ball.rawPos()
 
 @tab cpp
 ```cpp
-pVision -> rawBall().pos();
+// 获取球的真实坐标
+pVision -> ball().RawPos();
 ```
 :::
 
@@ -86,13 +88,13 @@ local ballVelY = ball.vel():y()
 @tab cpp
 ```cpp
 // 获取球的速度
-double ballVel =  pVision -> ball().vel();
+CVector ballVel =  Vision -> ball().Vel();
 
 // 获取球的X速度
-double ballVelX = pVision -> ball().vel().x();
+double ballVelX = pVision -> ball().Vel().x();
 
 // 获取球的Y速度
-double ballVelY = pVision -> ball().vel().y();
+double ballVelY = pVision -> ball().Vel().y();
 ```
 :::
 
@@ -108,7 +110,7 @@ local ballVelMod = ball.velMod()
 
 @tab cpp
 ```cpp
-double ballVelMod = pVision -> ball().vel().mod();
+double ballVelMod = pVision -> ball().Vel().mod();
 ```
 :::
 
@@ -124,7 +126,7 @@ local ballVelDir = ball.velDir()
 
 @tab cpp
 ```cpp
-double ballVelDir = pVision -> ball().vel().dir();
+double ballVelDir = pVision -> ball().Vel().dir();
 ```
 :::
 
@@ -143,5 +145,7 @@ ball.vaild()
 <!-- TODO: -->
 @tab cpp
 ```cpp
+pVision -> ball.Valid();
+
 ```
 :::
