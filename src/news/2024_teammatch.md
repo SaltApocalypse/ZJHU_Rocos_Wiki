@@ -6,8 +6,12 @@ comment: false
 
 <!-- more -->
 
->[!caution]
->糟糕！这里出了一点大问题
->请先从[这里](http://jwc.zjhu.edu.cn/_upload/article/files/65/24/cea05b1d45d9a26497b5c2b0c6d0/aa632372-b7ae-4340-9f85-337ff59ec3be.pdf)访问
+::: caution 糟糕！
+糟糕！这里出了一点大问题！
+请先从[这里](http://jwc.zjhu.edu.cn/_upload/article/files/65/24/cea05b1d45d9a26497b5c2b0c6d0/aa632372-b7ae-4340-9f85-337ff59ec3be.pdf)访问或下载。
+我们正在积极解决这个问题。
+:::
+
+⬇它~~暂时~~寄了😭⬇
 
 <PDF url="http://jwc.zjhu.edu.cn/_upload/article/files/65/24/cea05b1d45d9a26497b5c2b0c6d0/aa632372-b7ae-4340-9f85-337ff59ec3be.pdf" />

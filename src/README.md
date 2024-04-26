@@ -12,9 +12,9 @@ bgImageStyle:
 heroText: Let's Rocos!
 tagline: Unofficial Rocos' Wiki for ZJHU.
 actions:
-  - text: 部署教程
-    icon: solar:box-bold
-    link: ./other/setup.md
+  - text: 新手指南
+    icon: mdi:hand-wave
+    link: ./freshman/setup.md
     type: primary
 
   - text: Rocos 官方文档

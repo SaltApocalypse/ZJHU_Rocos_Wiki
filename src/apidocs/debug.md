@@ -4,11 +4,10 @@ description: debugEngine，向图形界面输出消息的接口类。
 author: umbrella
 ---
 
-<!-- more -->
-
->[!warning]
->面向维护人员：本页仍存在不完善之处，已用`TODO`标记。
->   - 几个地方的 cpp 没加进去 - SaltA 240426
+::: warning 面向维护人员
+本页仍存在不完善之处，已用`TODO`标记。
+- 几处的 cpp 没加进去 - SaltA 240426
+:::
 
 >[!tip]
 >为了让我们在编写代码过程中有更直观的感受，鼓励大家多多使用调试引擎。

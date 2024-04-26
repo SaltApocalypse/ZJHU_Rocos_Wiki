@@ -4,13 +4,14 @@ export default sidebar({
   "/": [
     "",
     {
-      text: "部署教程",
-      icon: "solar:box-bold",
-      prefix: "other/",
-      link: "other/setup",
+      text: "新手指南",
+      icon: "mdi:hand-wave",
+      prefix: "freshman/",
+      link: "freshman/",
+      children: "structure",
     },
     {
-      text: "接口文档",
+      text: "Rocos接口文档",
       icon: "f7:doc-fill",
       prefix: "apidocs/",
       link: "apidocs/",

@@ -4,8 +4,6 @@ description: 球 (ball) 相关接口。
 author: umbrella
 ---
 
-<!-- more -->
-
 ::: warning 面向维护人员
 本页仍存在不完善之处，已用`TODO`标记。
 - 几处的 cpp 没加进去 - SaltA 240426

@@ -1,9 +1,8 @@
 ---
 title: 机器人 (player & enemy)
 description: 机器人 (player & enemy) 相关接口。
+author: umbrella
 ---
-
-<!-- more -->
 
 >[!warning]
 >该页面仍在建设中，可能会有不完善的地方。 - 240426

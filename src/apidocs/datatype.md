@@ -1,13 +1,13 @@
 ---
 title: 数据类型相关
 description: 常用数据类型介绍。
+author: umbrella
 ---
 
-<!-- more -->
-
->[!warning]
->面向维护人员：本页仍存在不完善之处，已用`TODO`标记。
->   - 几处的 cpp 没加进去 - SaltA 240426
+::: warning 面向维护人员
+本页仍存在不完善之处，已用`TODO`标记。
+- 几处的 cpp 没加进去 - SaltA 240426
+:::
 
 >[!warning]
 >该页面仍在建设中，可能会有不完善的地方。 - 240426

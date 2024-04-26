@@ -6,8 +6,6 @@ description: 教你如何维护这个文档。
 author: Salt Apocalypse
 ---
 
-<!-- more -->
-
 >[!warning]
 >别急，短期内这里还不会写出来，先写接口文档起。
 
