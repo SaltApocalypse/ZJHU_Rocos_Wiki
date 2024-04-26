@@ -1,59 +1,118 @@
 ---
 title: 调试引擎 (debugEngine)
-description: 调试引擎 (debugEngine) 相关接口。
+description: debugEngine，向图形界面输出消息的接口类。
 author: umbrella
 ---
 
 <!-- more -->
 
+>[!tip]
+>为了让我们在编写代码过程中有更直观的感受，鼓励大家多多使用调试引擎。
+
 ## 提示
 
-- 为了让我们在编写代码过程中有更直观的感受，鼓励大家多多使用调试引擎
-- 可以查阅 gdebugengine.pkg 更直观调用
+- debugEngine，向图形界面输出消息的接口类。
 
-## debugEngine
+- cpp 层的调试引擎定义在`~/Core/src/Utils/GDebugEngine.h`（实现部分在同名`.cpp`文件）。
+
+- lua 层的调试引擎定义在`~/Core/src/LuaModule/gdebugengine.pkg`。
+
+## debugEngine 向界面输出消息
+
+### 字符串
+
+- 在指定位置输出一行文本。
+
 ::: code-tabs#shell
-
 @tab lua
-
 ```lua
--- debug_color
---  WHITE   = 0
---  RED     = 1
---  ORANGE  = 2
---  YELLOW  = 3
---  GREEN   = 4
---  CYAN    = 5
---  BLUE    = 6
---  PURPLE  = 7
---  GRAY    = 9
---  BLACK   = 10
+-- @param point       : 打印文本所在坐标首位置（左侧对齐）
+-- @param msg         : 输出文本
+-- @param debug_color : 是否使用自定义调试色彩（默认启用）
+-- @param RGB         : （可选）色彩
+-- @param size        : （可选）字体大小
+debugEngine:gui_debug_msg(point, msg, debug_color = 1, RGB = 0, size = 120)
 
--- 打印字符串
---  point (打印坐标) msg(输出文本) debug_color(颜色) size(字体大小，默认120)
-debugEngine:gui_debug_msg(point,msg,debug_color = 1,RGB = 0,size = 120)
--- 直接不输入后面的参数就是使用默认参数，如下
-debugEngine:gui_debug_msg(point,msg)
-
--- 在一个坐标点画X
--- point(坐标点) debug_color(颜色)
-debugEngine:gui_debug_x(point,debug_color)
-
--- 画一条线段
---  point1(起点坐标) point2(终点坐标) debug_color(颜色)
-debugEngine:gui_debug_line(point1,point2,debug_color)
-
--- 画一个弧
---  point (圆心) r(半径) start_angle(开始角度) span_angle(结束角度) debug_color(颜色)
-debugEngine:gui_debug_arc(point,r,start_angle,span_angle,debug_color)
-
--- 画一个三角形
---  point1 (定点1) point2(定点2) point3(定点3) debug_color(颜色)
-debugEngine:gui_debug_triangle(point1,point2,point3,debug_color)
+-- 一般简单点只需要输入前两项即可
+debugEngine:gui_debug_msg(point, msg)
 ```
 
 @tab cpp
-
 ```cpp
-
 ```
+:::
+
+>[!note]
+>`debug_color`参数根据定义[^1]应该是 *是否使用自定义调试色彩（默认启用）* 的选项，在后面的方法就不再赘述。
+
+### 叉点 `x`
+
+- 在指定坐标点画`x`。
+
+::: code-tabs#shell
+@tab lua
+```lua
+-- @param point       : 指定坐标点
+debugEngine:gui_debug_x(point)
+```
+
+@tab cpp
+```cpp
+```
+:::
+
+### 线段
+
+- 画一条线段
+
+::: code-tabs#shell
+@tab lua
+```lua
+-- @param point1       : 线段的起点
+-- @param point2       : 线段的终点
+debugEngine:gui_debug_line(point1, point2)
+```
+
+@tab cpp
+```cpp
+```
+:::
+
+### 弧
+
+- 画一个弧
+
+::: code-tabs#shell
+@tab lua
+```lua
+-- @param point       : 圆心
+-- @param r           : 半径
+-- @param start_angle : 开始角度
+-- @param span_angle  : 结束角度
+debugEngine:gui_debug_arc(point, r, start_angle, span_angle)
+```
+
+@tab cpp
+```cpp
+```
+:::
+
+### 三角形
+
+- 画一个三角形
+
+::: code-tabs#shell
+@tab lua
+```lua
+-- @param point1 : 坐标点 1
+-- @param point2 : 坐标点 2
+-- @param point3 : 坐标点 3
+debugEngine:gui_debug_triangle(point1, point2, point3)
+```
+
+@tab cpp
+```cpp
+```
+:::
+
+[^1]: 参考自`~/Core/src/Utils/GDebugEngine.cpp:35`。

@@ -13,7 +13,7 @@ heroText: Let's Rocos!
 tagline: Unofficial Rocos' Wiki for ZJHU.
 actions:
   - text: 部署教程
-    icon: material-symbols:developer-guide-outline
+    icon: solar:box-bold
     link: ./other/setup.md
     type: primary
 

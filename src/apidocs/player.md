@@ -5,6 +5,9 @@ description: 机器人 (player & enemy) 相关接口。
 
 <!-- more -->
 
+>[!warning]
+>该页面仍在建设中，可能会有不完善的地方。
+
 ## 提示
 
 - `player.lua`和`enemy.lua`分别为我方机器人和敌方机器人的方法文件，这两个文件大部分相同，下面列举的主要函数主要以 *player* 为例。
@@ -22,7 +25,7 @@ description: 机器人 (player & enemy) 相关接口。
 
 ### 车号
 
-- 详情：返回机器人的**车号 (int)**
+- 返回机器人的**车号 (int)**
 
 ::: code-tabs#shell
 
@@ -41,7 +44,7 @@ player.num(role)
 
 ### 存在性
 
-- 详情：返回机器人**是否存在 (bool)**
+- 返回机器人**是否存在 (bool)**
 
 ::: code-tabs#shell
 
@@ -60,7 +63,7 @@ player.vaild(role)
 
 ### 红外是否触发
 
-- 详情：返回机器人的**红外是否触发 (bool)**
+- 返回机器人的**红外是否触发 (bool)**
 
 ::: code-tabs#shell
 
@@ -79,7 +82,7 @@ player.infrareOn(role)
 
 ### 红外触发的帧数
 
-- 详情：返回机器人的**红外触发的帧数 (int)**
+- 返回机器人的**红外触发的帧数 (int)**
 
 ::: code-tabs#shell
 
@@ -98,7 +101,7 @@ player.infraredCount(role)
 
 ### 是否踢球
 
-- 详情：返回机器人**是否踢球 (bool)**
+- 返回机器人**是否踢球 (bool)**
 
 ::: code-tabs#shell
 
@@ -119,7 +122,7 @@ player.kickBall(role)
 
 ### 位置
 
-- 详情：返回机器人的**位置 (CGeoPoint)**
+- 返回机器人的**位置 (CGeoPoint)**
 
 ::: code-tabs#shell
 
@@ -138,7 +141,7 @@ player.pos(role)
 
 ### 位置 X 值 
 
-- 详情：返回机器人的**位置的 X 坐标 (double)**
+- 返回机器人的**位置的 X 坐标 (double)**
 
 ::: code-tabs#shell
 
@@ -157,7 +160,7 @@ player.posX(role)
 
 ### 位置 Y 值
 
-- 详情：返回机器人的**位置的 Y 坐标 (double)**
+- 返回机器人的**位置的 Y 坐标 (double)**
 
 ::: code-tabs#shell
 
@@ -178,7 +181,7 @@ player.posY(role)
 
 ### 角度
 
-- 详情：返回机器人**角度信息（弧度制） (double)**
+- 返回机器人**角度信息（弧度制） (double)**
 
 ::: code-tabs#shell
 
@@ -197,7 +200,7 @@ player.dir(role)
 
 ### 旋转速度
 
-- 详情：返回机器人的**旋转速度 (double)**
+- 返回机器人的**旋转速度 (double)**
 
 ::: code-tabs#shell
 
@@ -218,7 +221,7 @@ player.rotVel(role)
 
 ### 速度
 
-- 详情：返回机器人的**速度 (vector)**
+- 返回机器人的**速度 (vector)**
 
 ::: code-tabs#shell
 
@@ -237,7 +240,7 @@ player.vel(role)
 
 ### 速度方向
 
-- 详情：返回机器人的**速度方向 (double)**
+- 返回机器人的**速度方向 (double)**
 
 ::: code-tabs#shell
 
@@ -256,7 +259,7 @@ player.velDir(role)
 
 ### 速度大小
 
-- 详情：返回机器人的**速度大小 (double)**
+- 返回机器人的**速度大小 (double)**
 
 ::: code-tabs#shell
 
@@ -275,7 +278,7 @@ player.velMod(role)
 
 ### 真实速度
 
-- 详情：返回机器人的**真实速度 (double)**
+- 返回机器人的**真实速度 (double)**
 
 ::: code-tabs#shell
 
@@ -294,7 +297,7 @@ player.rawVel(role)
 
 ### 真实速度大小
 
-- 详情：返回机器人的**真实速度大小 (double)**
+- 返回机器人的**真实速度大小 (double)**
 
 ::: code-tabs#shell
 
@@ -313,7 +316,7 @@ player.rawVelMod(role)
 
 <!-- ### 
 
-- 详情：返回机器人的
+- 返回机器人的
 
 ::: code-tabs#shell
 
