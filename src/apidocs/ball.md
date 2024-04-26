@@ -12,7 +12,7 @@ author: umbrella
 
 ### 坐标
 ::: code-tabs#shell
-
+- 详情：返回球**的坐标相关的量 (CGeoPoint \ double)**
 @tab lua
 
 ```lua
@@ -32,15 +32,16 @@ local ballPosY = ball.pos():y()
 
 ```cpp
 // 获取球的坐标
-pVision -> ball().pos();
+pVision -> ball().Pos();
 
 // 获取球的X坐标
-pVision -> ball().pos().x();
+pVision -> ball().Pos().x();
 
 // 获取球的Y坐标
-pVision -> ball().pos().y();
+pVision -> ball().Pos().y();
 ```
 ### 真实坐标
+- 详情：返回球**的真实坐标相关的量 (CGeoPoint \ double)**
 - 真实坐标与上一节坐标的区别在于真实坐标是获取的图像原始信息，未经过滤波处理，可能会存在抖动的情况但是当球视野丢失时，使用真实坐标，我们可以得到球消失前一帧的位置。
 
 ::: code-tabs#shell
@@ -56,12 +57,12 @@ local ballRawPos = ball.rawPos()
 
 ```cpp
 // 获取球的真实坐标
-pVision -> rawBall().pos();
+pVision -> ball().RawPos();
 ```
 :::
 
 ### 速度
-
+- 详情：返回球**与速度相关的量 (CVector \ double)**
 ::: code-tabs#shell
 
 @tab lua
@@ -89,19 +90,19 @@ local ballVelDir = ball.velDir()
 
 ```cpp
 // 获取球的速度
-double ballVel =  Vision -> ball().vel();
+CVector ballVel =  Vision -> ball().Vel();
 
 // 获取球的X速度
-double ballVelX = pVision -> ball().vel().x();
+double ballVelX = pVision -> ball().Vel().x();
 
 // 获取球的Y速度
-double ballVelY = pVision -> ball().vel().y();
+double ballVelY = pVision -> ball().Vel().y();
 
 // 获取球速度的方向(0 ~ PI)
-double ballVelDir = pVision -> ball().vel().dir();
+double ballVelDir = pVision -> ball().Vel().dir();
 
 // 获取球速度的大小(单位mm/s)
-double ballVelMod = pVision -> ball().vel().mod();
+double ballVelMod = pVision -> ball().Vel().mod();
 ```
 
 
@@ -120,6 +121,8 @@ ball.vaild()
 @tab cpp
 
 ```cpp
+pVision -> ball.Valid();
+
 ```
 
 :::
