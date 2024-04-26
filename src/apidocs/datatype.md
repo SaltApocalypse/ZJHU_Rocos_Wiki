@@ -6,7 +6,11 @@ description: 常用数据类型介绍。
 <!-- more -->
 
 >[!warning]
->该页面仍在建设中，可能会有不完善的地方。
+>面向维护人员：本页仍存在不完善之处，已用`TODO`标记。
+>   - 几处的 cpp 没加进去 - SaltA 240426
+
+>[!warning]
+>该页面仍在建设中，可能会有不完善的地方。 - 240426
 
 ## 提示
 
@@ -163,6 +167,7 @@ double dist = point1.dist(point2);
 // 其实 mod == dist
 ```
 :::
+
 ### CGeoLine
 
 - 直线（区别于[线段](#cgeosegment)）。
@@ -236,11 +241,6 @@ double velY = vel.y()
 ```
 :::
 
-
-
-
-
-
 ### CGeoLineLineIntersection
 
 - 直线与直线的交点。
@@ -285,13 +285,13 @@ CGeoLineLineIntersection(const CGeoLine &line_1, const CGeoLine &line_2)
 local segment = CGeoSegment(point1, point2)
 ```
 
+<!-- TODO: -->
 @tab cpp
 ```cpp
 CGeoSegment() {}
 // 传入线段的起点和终点
 CGeoSegment(const CGeoPoint &p1, const CGeoPoint &p2)
 ```
-
 :::
 
 - 常用方法
@@ -312,6 +312,7 @@ CGeoSegment(const CGeoPoint &p1, const CGeoPoint &p2)
     local distance = (point1 - point2):mod()
     ```
 
+    <!-- TODO: -->
     @tab cpp
     ```cpp
     ```
@@ -326,6 +327,7 @@ CGeoSegment(const CGeoPoint &p1, const CGeoPoint &p2)
     local direction = (point1 - point2):dir()
     ```
 
+    <!-- TODO: -->
     @tab cpp
     ```cpp
     ```
@@ -333,5 +335,5 @@ CGeoSegment(const CGeoPoint &p1, const CGeoPoint &p2)
 
 ## 总结
 
-- 在 lua 中我们想要使用几何相关的数据类型及其方法，可以去 geometry.pkg 中查阅 并根据具体的定义去正确使用。
-- c++ 则需要到相应的 .h 或 .cpp 文件中查阅
+- 在 lua 中我们想要使用几何相关的数据类型及其方法，可以去`Rocos/Core/src/LuaModule/geometry.pkg`中查阅，并根据具体的定义去正确使用。
+- c++ 则需要到相应的`Rocos/share/geometry.h`和`Rocos/share/geometry.cpp`文件中查阅。

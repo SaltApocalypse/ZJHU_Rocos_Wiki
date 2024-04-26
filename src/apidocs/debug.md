@@ -6,6 +6,10 @@ author: umbrella
 
 <!-- more -->
 
+>[!warning]
+>面向维护人员：本页仍存在不完善之处，已用`TODO`标记。
+>   - 几个地方的 cpp 没加进去 - SaltA 240426
+
 >[!tip]
 >为了让我们在编写代码过程中有更直观的感受，鼓励大家多多使用调试引擎。
 
@@ -13,9 +17,9 @@ author: umbrella
 
 - debugEngine，向图形界面输出消息的接口类。
 
-- cpp 层的调试引擎定义在`~/Core/src/Utils/GDebugEngine.h`（实现部分在同名`.cpp`文件）。
+- cpp 层的调试引擎定义在`Rocos/Core/src/Utils/GDebugEngine.h`（实现部分在同名`.cpp`文件）。
 
-- lua 层的调试引擎定义在`~/Core/src/LuaModule/gdebugengine.pkg`。
+- lua 层的调试引擎定义在`Rocos/Core/src/LuaModule/gdebugengine.pkg`。
 
 ## debugEngine 向界面输出消息
 
@@ -37,6 +41,7 @@ debugEngine:gui_debug_msg(point, msg, debug_color = 1, RGB = 0, size = 120)
 debugEngine:gui_debug_msg(point, msg)
 ```
 
+<!-- TODO: -->
 @tab cpp
 ```cpp
 ```
@@ -56,6 +61,7 @@ debugEngine:gui_debug_msg(point, msg)
 debugEngine:gui_debug_x(point)
 ```
 
+<!-- TODO: -->
 @tab cpp
 ```cpp
 ```
@@ -73,6 +79,7 @@ debugEngine:gui_debug_x(point)
 debugEngine:gui_debug_line(point1, point2)
 ```
 
+<!-- TODO: -->
 @tab cpp
 ```cpp
 ```
@@ -92,6 +99,7 @@ debugEngine:gui_debug_line(point1, point2)
 debugEngine:gui_debug_arc(point, r, start_angle, span_angle)
 ```
 
+<!-- TODO: -->
 @tab cpp
 ```cpp
 ```
@@ -110,9 +118,10 @@ debugEngine:gui_debug_arc(point, r, start_angle, span_angle)
 debugEngine:gui_debug_triangle(point1, point2, point3)
 ```
 
+<!-- TODO: -->
 @tab cpp
 ```cpp
 ```
 :::
 
-[^1]: 参考自`~/Core/src/Utils/GDebugEngine.cpp:35`。
+[^1]: 参考自`Rocos/Core/src/Utils/GDebugEngine.cpp:35`。

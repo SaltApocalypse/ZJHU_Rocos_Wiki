@@ -1,7 +1,7 @@
 ---
 title: Rocos安装教程
 description: Rocos安装教程
-author: wxa
+author: TnTeQAQ
 ---
 
 <!-- more -->
