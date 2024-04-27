@@ -4,6 +4,11 @@ description: 机器人 (player & enemy) 相关接口。
 author: umbrella
 ---
 
+::: warning 面向维护人员
+本页仍存在不完善之处，已用`TODO`标记。
+- 几处的 cpp 没加进去 - SaltA 240427
+:::
+
 >[!warning]
 >该页面仍在建设中，可能会有不完善的地方。 - 240426
 
@@ -16,8 +21,6 @@ author: umbrella
 - **在 cpp 函数中**，需要调用视觉模块`pVision`来获取信息。
 
 - 在文档中不会特意区分不同语言的语法，能看懂即可，如 cpp 中的`int`与 lua 中的`interger`；需要注意时会特别标注。
-
-- TODO: cpp的还没写。
 
 ## 属性相关
 

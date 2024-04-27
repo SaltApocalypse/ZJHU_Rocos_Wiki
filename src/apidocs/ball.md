@@ -4,10 +4,7 @@ description: 球 (ball) 相关接口。
 author: umbrella
 ---
 
-::: warning 面向维护人员
-本页仍存在不完善之处，已用`TODO`标记。
-- 几处的 cpp 没加进去 - SaltA 240426
-:::
+## 写在前面
 
 ## 平面相关
 
@@ -35,13 +32,13 @@ local ballPosY = ball.pos():y()
 @tab cpp
 ```cpp
 // 获取球的坐标
-pVision -> ball().Pos();
+pVision->ball().Pos();
 
 // 获取球的X坐标
-pVision -> ball().Pos().x();
+pVision->ball().Pos().x();
 
 // 获取球的Y坐标
-pVision -> ball().Pos().y();
+pVision->ball().Pos().y();
 ```
 :::
 
@@ -58,7 +55,7 @@ local ballRawPos = ball.rawPos()
 @tab cpp
 ```cpp
 // 获取球的真实坐标
-pVision -> ball().RawPos();
+pVision->ball().RawPos();
 ```
 :::
 
@@ -86,13 +83,13 @@ local ballVelY = ball.vel():y()
 @tab cpp
 ```cpp
 // 获取球的速度
-CVector ballVel =  Vision -> ball().Vel();
+CVector ballVel = pVision->ball().Vel();
 
 // 获取球的X速度
-double ballVelX = pVision -> ball().Vel().x();
+double ballVelX = pVision->ball().Vel().x();
 
 // 获取球的Y速度
-double ballVelY = pVision -> ball().Vel().y();
+double ballVelY = pVision->ball().Vel().y();
 ```
 :::
 
@@ -108,7 +105,7 @@ local ballVelMod = ball.velMod()
 
 @tab cpp
 ```cpp
-double ballVelMod = pVision -> ball().Vel().mod();
+double ballVelMod = pVision->ball().Vel().mod();
 ```
 :::
 
@@ -124,7 +121,7 @@ local ballVelDir = ball.velDir()
 
 @tab cpp
 ```cpp
-double ballVelDir = pVision -> ball().Vel().dir();
+double ballVelDir = pVision->ball().Vel().dir();
 ```
 :::
 
@@ -132,7 +129,9 @@ double ballVelDir = pVision -> ball().Vel().dir();
 
 ### 存在性
 
-- 返回球是否存在 (bool)
+- 球是否存在 (bool)
+
+返回球是否存在。
 
 ::: code-tabs#shell
 @tab lua
@@ -140,10 +139,8 @@ double ballVelDir = pVision -> ball().Vel().dir();
 ball.vaild()
 ```
 
-<!-- TODO: -->
 @tab cpp
 ```cpp
-pVision -> ball.Valid();
-
+bool pVision->ball().Valid()
 ```
 :::

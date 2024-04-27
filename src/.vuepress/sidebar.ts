@@ -8,7 +8,7 @@ export default sidebar({
       icon: "mdi:hand-wave",
       prefix: "freshman/",
       link: "freshman/",
-      children: "structure",
+      children: ["setup", "tools"],
     },
     {
       text: "Rocos接口文档",

@@ -6,19 +6,21 @@ author: umbrella
 
 ::: warning 面向维护人员
 本页仍存在不完善之处，已用`TODO`标记。
-- 几处的 cpp 没加进去 - SaltA 240426
+- 几个地方 cpp 没加进去 - SaltA 240426
+- 又发现几个地方 lua 没加进去 - SaltA 240427
+- 后面添加的 常用方法 的格式是乱的，还在修。 - SaltA 240427
 :::
 
 >[!warning]
 >该页面仍在建设中，可能会有不完善的地方。 - 240426
 
-## 提示
+## 写在前面
 
 - 本篇主要介绍在`Rocos/share/geomotry.h`中定义的类(class)。
 
-- 内容部分提供了部分类型的**私有成员**仅用于方便理解用。
+- *内容* 部分提供了部分类型的**私有成员**仅用于方便理解用。
 
-- 构造 部分的 lua 部分传入参数的类型可以参考 cpp 部分。
+- *构造* 部分的 lua 部分传入参数的类型可以参考 cpp 部分。
 
 ## 常用数据类型
 
@@ -98,7 +100,7 @@ double velY = vel.y()
 :::
 ### CGeoPoint
 
-- 坐标点。
+- 二维的坐标点。
 
 - 内容
     - `double _x` 坐标的 x 值。
@@ -200,9 +202,20 @@ CGeoLine(const CGeoPoint &p, double angle)
 :::
 
 - 常用方法
-    - `CGeoPoint projection(const CGeoPoint &p)` 返回投影点坐标。
-    
-    > 关于投影点坐标
+    - 返回投影点坐标。
+
+    ::: code-tabs#shell
+    @tab lua
+    ```lua
+    ```
+
+    @tab cpp
+    ```cpp
+    CGeoPoint projection(const CGeoPoint &p)
+    ```
+    :::
+
+    > 关于投影点坐标：
     >
     > ![关于投影点坐标](https://cdn.jsdelivr.net/gh/saltapocalypse/CDN/ZJHU_Rocos_Wiki/prjpoint.png)
     
@@ -285,7 +298,6 @@ CGeoLineLineIntersection(const CGeoLine &line_1, const CGeoLine &line_2)
 local segment = CGeoSegment(point1, point2)
 ```
 
-<!-- TODO: -->
 @tab cpp
 ```cpp
 CGeoSegment() {}

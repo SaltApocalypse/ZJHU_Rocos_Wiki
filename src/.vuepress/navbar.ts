@@ -3,9 +3,10 @@ import { navbar } from "vuepress-theme-hope";
 export default navbar([
   "/",
   {
-    text: "部署教程",
-    icon: "solar:box-bold",
-    link: "other/setup",
+    text: "新手指南",
+    icon: "mdi:hand-wave",
+    prefix: "freshman/",
+    link: "freshman/",
   },
   {
     text: "接口文档",
