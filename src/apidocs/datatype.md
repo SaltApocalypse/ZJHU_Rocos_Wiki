@@ -4,16 +4,6 @@ description: 常用数据类型介绍。
 author: umbrella
 ---
 
-::: warning 面向维护人员
-本页仍存在不完善之处，已用`TODO`标记。
-- 几个地方 cpp 没加进去 - SaltA 240426
-- 又发现几个地方 lua 没加进去 - SaltA 240427
-- 后面添加的 常用方法 的格式是乱的，还在修。 - SaltA 240427
-:::
-
->[!warning]
->该页面仍在建设中，可能会有不完善的地方。 - 240426
-
 ## 写在前面
 
 - 本篇主要介绍在`Rocos/share/geomotry.h`中定义的类(class)。
@@ -205,9 +195,9 @@ CGeoLine(const CGeoPoint &p, double angle)
     - 返回投影点坐标。
 
     ::: code-tabs#shell
-    @tab lua
+    <!-- @tab lua
     ```lua
-    ```
+    ``` -->
 
     @tab cpp
     ```cpp
@@ -265,9 +255,9 @@ double velY = vel.y()
 - 构造
 
 ::: code-tabs#shell
-@tab lua
+<!-- @tab lua
 ```lua
-```
+``` -->
 
 @tab cpp
 ```cpp
@@ -315,6 +305,10 @@ CGeoSegment(const CGeoPoint &p1, const CGeoPoint &p2)
 
 ## 常用数据类型的方法
 
+:::tip
+根据[这里](player.md#footnote1)所介绍的，该板块的这些常用方法的适用范围不仅仅只有演示中的数据类型，可以自行实践。
+:::
+
 - `mod()` 取两个坐标之间的模长。
 
     用法示例：
@@ -324,10 +318,9 @@ CGeoSegment(const CGeoPoint &p1, const CGeoPoint &p2)
     local distance = (point1 - point2):mod()
     ```
 
-    <!-- TODO: -->
-    @tab cpp
+    <!-- @tab cpp
     ```cpp
-    ```
+    ``` -->
     :::
 
 - `dir()` 取两个坐标的方向。
@@ -339,10 +332,9 @@ CGeoSegment(const CGeoPoint &p1, const CGeoPoint &p2)
     local direction = (point1 - point2):dir()
     ```
 
-    <!-- TODO: -->
-    @tab cpp
+    <!-- @tab cpp
     ```cpp
-    ```
+    ``` -->
     :::
 
 ## 总结

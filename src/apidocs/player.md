@@ -4,26 +4,31 @@ description: 机器人 (player & enemy) 相关接口。
 author: umbrella
 ---
 
-::: warning 面向维护人员
-本页仍存在不完善之处，已用`TODO`标记。
-- 几处的 cpp 没加进去 - SaltA 240427
-:::
-
->[!warning]
->该页面仍在建设中，可能会有不完善的地方。 - 240426
-
-## 提示
+## 写在前面
 
 - `player.lua`和`enemy.lua`分别为我方机器人和敌方机器人的方法文件，这两个文件大部分相同，下面列举的主要函数主要以 *player* 为例。
 
 - **在 lua 方法中**，参数`role`为*所选角色*（机器人车号或者匹配的名字，**两者均可**）。
 
-- **在 cpp 函数中**，需要调用视觉模块`pVision`来获取信息。
+- **在 cpp 函数中**，需要调用视觉模块`pVision`来获取信息，其中
+    - 任一机器人用`pVision->allPlayer()`表示
+    - 我方机器人用`pVision->ourPlayer()`表示
+    - 敌方机器人用`pVision->theirPlayer()`表示
+
+    ::: warning
+    对于机器人的定义是`const PlayerVisionT& ourPlayer(int num)`，所以实际使用中别忘了填入*机器人编号*参数，为了方便美观，下文中省略。
+
+    例如：要获取我方编号 1 的机器人的位置，应该写：
+    ```cpp
+    pVision->ourPlayer(1).Pos()
+    ```
+    :::
+
+    因为这些不同机器人的方法大部分相同[^1]，以下统一使用`ourPlayer()`演示。
 
 - 在文档中不会特意区分不同语言的语法，能看懂即可，如 cpp 中的`int`与 lua 中的`interger`；需要注意时会特别标注。
 
 ## 属性相关
-
 
 ### 车号
 
@@ -37,10 +42,10 @@ author: umbrella
 player.num(role)
 ```
 
-@tab cpp
-
+<!-- @tab cpp
+ 
 ```cpp
-```
+``` -->
 
 :::
 
@@ -59,6 +64,7 @@ player.vaild(role)
 @tab cpp
 
 ```cpp
+pVision->ourPlayer().Valid()
 ```
 
 :::
@@ -75,10 +81,10 @@ player.vaild(role)
 player.infrareOn(role)
 ```
 
-@tab cpp
+<!-- @tab cpp
 
 ```cpp
-```
+``` -->
 
 :::
 
@@ -94,10 +100,10 @@ player.infrareOn(role)
 player.infraredCount(role)
 ```
 
-@tab cpp
+<!-- @tab cpp
 
 ```cpp
-```
+``` -->
 
 :::
 
@@ -113,10 +119,10 @@ player.infraredCount(role)
 player.kickBall(role)
 ```
 
-@tab cpp
+<!-- @tab cpp
 
 ```cpp
-```
+``` -->
 
 :::
 
@@ -137,6 +143,7 @@ player.pos(role)
 @tab cpp
 
 ```cpp
+pVision->ourPlayer().Pos()
 ```
 
 :::
@@ -156,6 +163,9 @@ player.posX(role)
 @tab cpp
 
 ```cpp
+pVision->ourPlayer().X()
+
+pVision->ourPlayer().Pos().x
 ```
 
 :::
@@ -175,6 +185,9 @@ player.posY(role)
 @tab cpp
 
 ```cpp
+pVision->ourPlayer().Y()
+
+pVision->ourPlayer().Pos().y
 ```
 
 :::
@@ -196,6 +209,7 @@ player.dir(role)
 @tab cpp
 
 ```cpp
+pVision->ourPlayer().Dir()
 ```
 
 :::
@@ -215,6 +229,7 @@ player.rotVel(role)
 @tab cpp
 
 ```cpp
+pVision->ourPlayer().RotVel()
 ```
 
 :::
@@ -236,6 +251,7 @@ player.vel(role)
 @tab cpp
 
 ```cpp
+pVision->ourPlayer().Vel()
 ```
 
 :::
@@ -255,6 +271,7 @@ player.velDir(role)
 @tab cpp
 
 ```cpp
+pVision->ourPlayer().Vel().dir()
 ```
 
 :::
@@ -274,6 +291,7 @@ player.velMod(role)
 @tab cpp
 
 ```cpp
+pVision->ourPlayer().Vel().mod()
 ```
 
 :::
@@ -293,6 +311,7 @@ player.rawVel(role)
 @tab cpp
 
 ```cpp
+pVision->ourPlayer().RawVel()
 ```
 
 :::
@@ -312,25 +331,50 @@ player.rawVelMod(role)
 @tab cpp
 
 ```cpp
+pVision->ourPlayer().RawVel().mod()
 ```
 
 :::
 
-<!-- ### 
+[^1]: 简单解释一下这个“大部分相同”：
 
-- 返回机器人的
+    在`allPlayer()`、`ourPlayer()`和`theirPlayer()`都是类`CVisionModule`中的成员函数。
 
-::: code-tabs#shell
+    @startuml
+    class CVisionModule {
+    public:
+        + allPlayer(int num) const : PlayerVisionT
+        + ourPlayer(int num) const : PlayerVisionT
+        + theirPlayer(int num) const : PlayerVisionT
+    }
+    note left of CVisionModule : 注：此处只列举了三个解释用的成员函数。
+    @enduml
 
-@tab lua
+    我们会发现他们的类型都是`PlayerVisionT`，如果再往前找会发现这个类继承自三个父类。
 
-```lua
+    这里拿`bool Valid()`举例，它其实是`ObjectPoseT`下的一个成员函数，这意味着“结构上差不多的”这三个成员函数可使用的大部分成员函数都是相同的。
 
-```
+    @startuml
+    class PlayerVisionT
+    class VisionObjectT
+    class PlayerTypeT
+    class ObjectPoseT{
+        + bool Valid();
+    }
 
-@tab cpp
+    PlayerPoseT <|-- PlayerVisionT
+    VisionObjectT <|-- PlayerVisionT
+    PlayerTypeT <|-- PlayerVisionT
+    ObjectPoseT <|-- PlayerPoseT
+    @enduml
 
-```cpp
-```
+    所以根据文档中演示的*返回我方球员位置*的代码`pVision->ourPlayer().Pos()`，要获取对方某球员的位置，可以写成`pVision->theirPlayer().Pos()`。
 
-::: -->
+    :::tip
+    其实根据上述内容可以推测出一些其他内容。
+    比如机器人属性里面的`Vel()`，有一个`Vel().mod()`的函数；那么`rawVel().mod()`也存在（它们俩都表示 *“速度”*，都有 *“大小”* 这一属性）。这点可以自己去查一下定义来确认。
+
+    因此，可以根据代码编辑器的代码补全功能和对相似的变量含义的猜想，来快速调用或是写出一些你所想要的功能，减少翻看帮助文档、浏览定义的次数，编码更顺畅。
+
+    像 VSC 等代码编辑器可以通过`F12`来速览定义。
+    :::
