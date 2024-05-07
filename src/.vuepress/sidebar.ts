@@ -18,6 +18,13 @@ export default sidebar({
       children: "structure",
     },
     {
+      text: "其他内容",
+      icon: "material-symbols:other-admission",
+      prefix: "other/",
+      link: "other/",
+      children: "structure",
+    },
+    {
       text: "面向维护人员",
       icon: "mdi:tools",
       prefix: "developer/",
