@@ -7,12 +7,7 @@ author: umbrella
 
 <!-- more -->
 
-::: warning 面向维护人员
-- 机器人结构参考图片待补充。
---240507
-:::
-
-:::warning 注意安全
+::: warning 注意安全
 在进行硬件的检查、调整的时候，请务必注意人身安全！！！
 :::
 
@@ -20,13 +15,20 @@ author: umbrella
 
 ## 认识 - 机器人结构参考
 
+![机器人结构正面结构](https://cdn.jsdelivr.net/gh/saltapocalypse/CDN/ZJHU_Rocos_Wiki/robot1.png)
+
+![机器人结构上面结构](https://cdn.jsdelivr.net/gh/saltapocalypse/CDN/ZJHU_Rocos_Wiki/robot2.png)
+
+![机器人结构上面结构注释版](https://cdn.jsdelivr.net/gh/saltapocalypse/CDN/ZJHU_Rocos_Wiki/robot2_comment.png)
+
+
 <!-- TODO: -->
 
 ## 认识 - 机器人主板下方按钮
 
 机器人主板下方从左到右有三行按钮，分别为：
 
-:::tips
+::: tips
 1. 本文约定：按钮往下为0，往上为1。
 2. 我们的机器人（图中）的按钮从左到右都是 1~4 的编号，但是为了方便，约定按照从左到右以二进制高位到地位来。
 > 例如，需要调整某个按钮为 3，即把从左到右四个按钮设置为`0011`。
