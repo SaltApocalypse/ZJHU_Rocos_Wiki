@@ -1,5 +1,5 @@
 ---
-title: 机器人自检流程
+title: 机器人认识与自检流程
 description: 如何检查机器人状态是否正常。
 comment: false
 author: umbrella
@@ -7,31 +7,46 @@ author: umbrella
 
 <!-- more -->
 
-::: warning 注意安全
-在进行硬件的检查、调整的时候，请务必注意人身安全！！！
-:::
-
 先对机器人做一个简单介绍，如果你要直接看机器人自检操作，请跳到[这里](#操作---进行机器人自检)。
+
+## 认识 - 车号定义
+
+视觉系统通过颜色来识别场地上的球、机器人信息，其中*橙色*用于识别球。
+
+机器人顶盖有四五个色标：
+    - 中间用*蓝色或黄色*来标记队伍；
+    - 四周用*荧光绿和荧光粉*来标记车号（如下图所示，图已折叠）。
+
+::: details 点击展开图片
+![机器人车号定义](https://cdn.jsdelivr.net/gh/saltapocalypse/CDN/ZJHU_Rocos_Wiki/robot4.png)
+:::
 
 ## 认识 - 机器人结构参考
 
+::: details 点击展开图片
 ![机器人结构正面结构](https://cdn.jsdelivr.net/gh/saltapocalypse/CDN/ZJHU_Rocos_Wiki/robot1.png)
 
 ![机器人结构上面结构](https://cdn.jsdelivr.net/gh/saltapocalypse/CDN/ZJHU_Rocos_Wiki/robot2.png)
 
 ![机器人结构上面结构注释版](https://cdn.jsdelivr.net/gh/saltapocalypse/CDN/ZJHU_Rocos_Wiki/robot2_comment.png)
-
-
-<!-- TODO: -->
+:::
 
 ## 认识 - 机器人主板下方按钮
 
 机器人主板下方从左到右有三行按钮，分别为：
 
-::: tips
+::: tip
 1. 本文约定：按钮往下为0，往上为1。
 2. 我们的机器人（图中）的按钮从左到右都是 1~4 的编号，但是为了方便，约定按照从左到右以二进制高位到地位来。
 > 例如，需要调整某个按钮为 3，即把从左到右四个按钮设置为`0011`。
+:::
+
+::: details 安装步骤图示
+![1. 将电池放入插槽（注意方向）](https://cdn.jsdelivr.net/gh/saltapocalypse/CDN/ZJHU_Rocos_Wiki/robot3_1.png)
+
+![2. 插上插头](https://cdn.jsdelivr.net/gh/saltapocalypse/CDN/ZJHU_Rocos_Wiki/robot3_2.png)
+
+![3. 安装完毕](https://cdn.jsdelivr.net/gh/saltapocalypse/CDN/ZJHU_Rocos_Wiki/robot3_3.png)
 :::
 
 ### `RF_FREQ`
@@ -51,6 +66,10 @@ author: umbrella
 
 ## 操作 - 进行机器人自检
 
+::: warning 注意安全
+在进行硬件的检查、调整的时候，请务必注意人身安全！！！
+:::
+
 ### 前置准备
 
 把机器人平放在平整的地面，并且确保场地空间足够大。
@@ -68,7 +87,7 @@ author: umbrella
 ### 按下电源键开机，开始测试以下环节
 
 1. 开机之后，**白灯亮**表示开始自检。
-::: tips
+::: tip
 刚开机，用手轻轻转一下轮子，如果发现四个轮子锁死，说明电机正常。
 如果在地上乱转，则说明电机可能有问题。
 :::
