@@ -15,21 +15,21 @@ export default sidebar({
       icon: "f7:doc-fill",
       prefix: "apidocs/",
       link: "apidocs/",
-      children: "structure",
+      children: ["debug", "datatype", "player", "ball"],
     },
     {
       text: "其他内容",
       icon: "material-symbols:other-admission",
       prefix: "other/",
       link: "other/",
-      children: "structure",
+      children: ["self-check"],
     },
     {
       text: "面向维护人员",
       icon: "mdi:tools",
       prefix: "developer/",
       link: "developer/",
-      children: "structure",
+      children: ["setup"],
     }
   ],
 });
