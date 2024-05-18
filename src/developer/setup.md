@@ -1,6 +1,6 @@
 ---
-title: 部署
-description: 文档部署。
+title: 部署文档
+description: 部署文档。
 author: Salt Apocalypse
 ---
 

@@ -207,7 +207,7 @@ CGeoLine(const CGeoPoint &p, double angle)
 
     > 关于投影点坐标：
     >
-    > ![关于投影点坐标](https://cdn.jsdelivr.net/gh/saltapocalypse/CDN/ZJHU_Rocos_Wiki/prjpoint.png)
+    > ![关于投影点坐标](https://cdn.jsdelivr.net/gh/saltapocalypse/CDN/ZJHU_Rocos_Wiki/src.apidocs.datatype.prjpoint.png)
     
     - `CGeoPoint point1()` 返回点 1。
     - `CGeoPoint point2()` 返回点 2。

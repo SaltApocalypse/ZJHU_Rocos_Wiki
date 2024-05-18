@@ -18,17 +18,17 @@ author: umbrella
     - 四周用*荧光绿和荧光粉*来标记车号（如下图所示，图已折叠）。
 
 ::: details 点击展开图片
-![机器人车号定义](https://cdn.jsdelivr.net/gh/saltapocalypse/CDN/ZJHU_Rocos_Wiki/robot4.png)
+![机器人车号定义](https://cdn.jsdelivr.net/gh/saltapocalypse/CDN/ZJHU_Rocos_Wiki/src.other.self-check.robot4.png)
 :::
 
 ## 认识 - 机器人结构参考
 
 ::: details 点击展开图片
-![机器人结构正面结构](https://cdn.jsdelivr.net/gh/saltapocalypse/CDN/ZJHU_Rocos_Wiki/robot1.png)
+![机器人结构正面结构](https://cdn.jsdelivr.net/gh/saltapocalypse/CDN/ZJHU_Rocos_Wiki/src.other.self-check.robot1.png)
 
-![机器人结构上面结构](https://cdn.jsdelivr.net/gh/saltapocalypse/CDN/ZJHU_Rocos_Wiki/robot2.png)
+![机器人结构上面结构](https://cdn.jsdelivr.net/gh/saltapocalypse/CDN/ZJHU_Rocos_Wiki/src.other.self-check.robot2.png)
 
-![机器人结构上面结构注释版](https://cdn.jsdelivr.net/gh/saltapocalypse/CDN/ZJHU_Rocos_Wiki/robot2_comment.png)
+![机器人结构上面结构注释版](https://cdn.jsdelivr.net/gh/saltapocalypse/CDN/ZJHU_Rocos_Wiki/src.other.self-check.robot2_comment.png)
 :::
 
 ## 认识 - 机器人主板下方按钮
@@ -42,11 +42,11 @@ author: umbrella
 :::
 
 ::: details 安装步骤图示
-![1. 将电池放入插槽（注意方向）](https://cdn.jsdelivr.net/gh/saltapocalypse/CDN/ZJHU_Rocos_Wiki/robot3_1.png)
+![1. 将电池放入插槽（注意方向）](https://cdn.jsdelivr.net/gh/saltapocalypse/CDN/ZJHU_Rocos_Wiki/src.other.self-check.robot3_1.png)
 
-![2. 插上插头](https://cdn.jsdelivr.net/gh/saltapocalypse/CDN/ZJHU_Rocos_Wiki/robot3_2.png)
+![2. 插上插头](https://cdn.jsdelivr.net/gh/saltapocalypse/CDN/ZJHU_Rocos_Wiki/src.other.self-check.robot3_2.png)
 
-![3. 安装完毕](https://cdn.jsdelivr.net/gh/saltapocalypse/CDN/ZJHU_Rocos_Wiki/robot3_3.png)
+![3. 安装完毕](https://cdn.jsdelivr.net/gh/saltapocalypse/CDN/ZJHU_Rocos_Wiki/src.other.self-check.robot3_3.png)
 :::
 
 ### `RF_FREQ`

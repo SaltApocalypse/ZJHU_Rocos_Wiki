@@ -29,7 +29,7 @@ export default sidebar({
       icon: "mdi:tools",
       prefix: "developer/",
       link: "developer/",
-      children: ["setup"],
+      children: ["setup", "edit"],
     }
   ],
 });
