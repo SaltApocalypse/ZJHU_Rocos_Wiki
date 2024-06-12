@@ -63,9 +63,14 @@ git config --global user.email "你的邮箱"
 使用 `git help` 获取更多详细的帮助。
 :::
 
-#### 克隆
+::: important
+在命令行中，`方括号 []` 表示可选参数，`尖括号 <>` 表示必需参数。
+:::
+
+#### 克隆 clone
 
 - `git clone` 将远程仓库复制到本地。
+- 当我们需要从网上整个库下来的时候用这个。
 
 ``` shell
 # 定义
@@ -78,31 +83,97 @@ git clone <仓库地址> [<目标地址（你想把这个库放在哪里）>]
 git clone git@github.com:Robocup-ssl-China/rocos.git ~/user/Rocos # 如果你已经在 user 文件夹，可以省略这里的第二个参数
 ```
 
-::: tip
-在命令行中，`方括号 []` 表示可选参数，`尖括号 <>` 表示必需参数。
-:::
-
-#### 拉取
+#### 拉取 pull
 
 - `git pull` 将远程仓库拉取到本地。
+- 当我们需要更新到最新版的时候使用（比如开始工作前要把进度和仓库同步，因为可能其他人有提交）。
 
 ``` shell
 # 定义
-git pull [<options>] [<repository> [<refspec>…​]]
+git pull [<options>]
 
 # 常用
 git pull             # 拉取（相当于直接更新）
 git pull [<仓库地址>] # 要从特定的仓库拉取
-
-# 举例：其他同学更新了仓库，你需要先拉取最新版再继续写
-git pull
 ```
 
-####
+#### 添加文件到暂存区 add
+
+- `git add` 将文件添加到暂存区。
+- 当我们准备上传的时候，需要先把需要上传的文件添加到暂存区，然后提交暂存区（把文件从暂存区传到本地仓库），最后推送（把本地仓库内容传到远程）。
+
+``` shell
+# 定义
+git add [<files>]
+
+# 常用
+git add .   # 把所有更改添加到暂存区
+```
+
+#### 提交暂存区 commit
+
+- `git commit` 提交暂存区。
+- 常用参数为 `-m [<message>]`，用来添加本次提交的说明（你这次提交做了什么）。
+- 如果不添加说明直接提交，git 会让你填写说明，如果此时仍不填写说明，这次提交会失败。
+
+``` shell
+# 常用
+git commit -m "提交说明"    # 提交，并且给这次提交添加说明
+```
+
+#### 推送 push
+
+- `git push` 从将本地的分支版本上传到远程并合并。
+- 当文件被提交到本地仓库后，使用这个命令给推送到远程。
+- `--force` 参数可以表示这次推送是强制推送（直接覆盖，谨慎使用）。
+
+``` shell
+# 常用
+git push                    # 一般情况下直接推送就行了
+git push <远程主机> <分支>   # 推送到指定主机的指定分支
+```
+
+#### 检出/切换分支 checkout/switch
+
+- `git checkout` 命令用于在几个分支之间切换。
+- 使用参数 `-b <分支名>` 可以创建分支并切换过去。
+- `git switch` 和前者功能类似，“更清晰地切换分支”。
+- 使用参数 `-c <分支名>` 可以创建分支并切换过去。
+- 在执行上述操作前要确保当前没有修改或者修改已被提交。
+- 除了分支名，也可以用**哈希值**来切换到指定的提交版本。
+
+``` shell
+# 常用
+git checkout <分支名>
+git checkout -b <新建的分支名>
+
+git switch <分支名>
+git switch -c <新建的分支名>
+```
+
+::: tip 为什么要有多个分支？
+多分支可以让不同人同时开发不同功能，互不影响。
+也可以用作版本隔离，比如开发版本与发布版本分开来。
+:::
+
+#### 合并 merge
+
+- `git merge` 命令用于合并不同的分支。
+- 要注意是把参数中的分支合并入当前的分支，所以最好先用 `git checkout` 确认当前分支是否正确。
+
+``` shell
+# 定义
+git merge <branch>  # 将指定分支合并入当前所在分支
+
+# 举例：我需要把开发分支 "dev" 合并入主分支 "main"
+git checkout main
+git merge dev
+# 如果有冲突，需要解决后再次提交
+```
 
 ### 案例参考
 
-- 我需要部署 Rocos
+- 我电脑上还没有 Rocos，我要去从仓库下载个
 ``` shell
 # clone 自官方仓库
 git clone https://github.com/Robocup-ssl-China/rocos
@@ -113,11 +184,10 @@ git clone https://github.com/Umbrella167/Rocos
 
 - 我进行了更新，需要上传
 ``` shell
-git pull                                            # 上传前先更新到最新版本
+git pull                                            # 上传前先更新到最新版本，如果有冲突还要解决冲突并合并
 git add .                                           # 添加所有更新
 git commit -m "What have you done in this commit?"  # 提交信息可以写这次提交更新了什么，不建议乱写！
 git push                                            # 推送
-# 如果有冲突还要解决冲突并合并
 ```
 
 - Rocos 的上游修改了，我需要拉取上游更新
