@@ -2,6 +2,7 @@ import { hopeTheme } from "vuepress-theme-hope";
 import navbar from "./navbar.js";
 import sidebar from "./sidebar.js";
 import { docsearchPlugin } from '@vuepress/plugin-docsearch'
+import { algolia, giscus } from './salt.js';
 
 export default hopeTheme({
   hostname: "https://rocos.salta.top",
@@ -50,9 +51,9 @@ export default hopeTheme({
     comment: {
       provider: "Giscus",
       repo: "SaltApocalypse/ZJHU_Rocos_Wiki",
-      repoId: "R_kgDOLxaO6Q",
-      category: "Announcements",
-      categoryId: "DIC_kwDOLxaO6c4Ce2M",
+      repoId: giscus.repoId,
+      category: giscus.category,
+      categoryId: giscus.categoryId,
     },
 
     components: {
@@ -129,6 +130,12 @@ export default hopeTheme({
 
       // install sandpack-vue3 before enabling it
       // sandpack: true,
+    },
+
+    docsearch: {
+      appId: algolia.appID,
+      apiKey: algolia.apiKey,
+      indexName: algolia.indexName
     },
 
     // 如果你需要 PWA。安装 @vuepress/plugin-pwa 并取消下方注释
