@@ -2,7 +2,6 @@ import { hopeTheme } from "vuepress-theme-hope";
 import navbar from "./navbar.js";
 import sidebar from "./sidebar.js";
 import { docsearchPlugin } from '@vuepress/plugin-docsearch'
-import { algolia, giscus } from './salt.js';
 
 export default hopeTheme({
   hostname: "https://rocos.salta.top",
