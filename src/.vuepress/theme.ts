@@ -45,15 +45,14 @@ export default hopeTheme({
   // 如果想要实时查看任何改变，启用它。注: 这对更新性能有很大负面影响
   // hotReload: true,
 
-  // 在这里配置主题提供的插件
+  // 插件
   plugins: {
-    // 注意: 仅用于测试! 你必须自行生成并在生产环境中使用自己的评论服务
     comment: {
       provider: "Giscus",
       repo: "SaltApocalypse/ZJHU_Rocos_Wiki",
-      repoId: giscus.repoId,
-      category: giscus.category,
-      categoryId: giscus.categoryId,
+      repoId: "R_kgDOLxaO6Q",
+      category: "Announcements",
+      categoryId: "DIC_kwDOLxaO6c4Ce2M",
     },
 
     components: {
@@ -133,9 +132,9 @@ export default hopeTheme({
     },
 
     docsearch: {
-      appId: algolia.appID,
-      apiKey: algolia.apiKey,
-      indexName: algolia.indexName
+      appId: 'RFOOT1YO4D',
+      apiKey: '8f8fc104fd61d741e8d94db89a9a4652',
+      indexName: 'rocos-salta',
     },
 
     // 如果你需要 PWA。安装 @vuepress/plugin-pwa 并取消下方注释

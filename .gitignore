@@ -6,4 +6,3 @@ src/.vuepress/dist/
 
 # SaltA 留的
 .vscode
-src/.vuepress/salt.ts
