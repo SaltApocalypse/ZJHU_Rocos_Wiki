@@ -50,11 +50,11 @@ git config --global user.email "你的邮箱"
     ssh-keygen -t ed25519 -C "你的邮箱"
     ```
     随后按四下回车，在默认地方生成密钥，Linux 在 `~/.ssh/` 文件夹，Windows 在 `C:\\Users\\username\\.ssh\\` 文件夹。
-    ![生成 SSH 密钥](https://cdn.jsdelivr.net/gh/saltapocalypse/CDN/ZJHU_Rocos_Wiki/src.freshman.tools.ssh-keygen.png)
+    ![生成 SSH 密钥](https://cdn.jsdelivr.net/gh/saltapocalypse/ZJHU_Rocos_Wiki/Assets/src.freshman.tools.ssh-keygen.png)
     
     2. 找到公钥，在 `.ssh` 文件夹下，叫做 `id_rsa.pub`，复制这段内容。
     3. 打开[ `Github > 右上角个人设置 > 左侧 Access/SSH and GPG keys > 右上角 生成SSH Key` ](https://github.com/settings/ssh/new)，填入标题和公钥（上一步复制的那些），保存。
-    ![添加 SSH 公钥到 Github](https://cdn.jsdelivr.net/gh/saltapocalypse/CDN/ZJHU_Rocos_Wiki/src.freshman.tools.Add_SSH_key.png)
+    ![添加 SSH 公钥到 Github](https://cdn.jsdelivr.net/gh/saltapocalypse/ZJHU_Rocos_Wiki/Assets/src.freshman.tools.Add_SSH_key.png)
 :::
 
 ### 常用命令
@@ -205,4 +205,4 @@ git push                                            # 推送
 ### 解决冲突并合并
 
 当产生冲突的时候，Code 的冲突解决会很好用，直观方便（如下图所示，左侧是当前分支，右侧是输入分支，中间是合并后的预览；可以通过标记的冲突处上面的选项快速决定需要保留哪部分内容）。
-![Code Conflicts Solver](https://cdn.jsdelivr.net/gh/saltapocalypse/CDN/ZJHU_Rocos_Wiki/src.freshman.tools.Code_solve_conflicts.png)
+![Code Conflicts Solver](https://cdn.jsdelivr.net/gh/saltapocalypse/ZJHU_Rocos_Wiki/Assets/src.freshman.tools.Code_solve_conflicts.png)

@@ -2,9 +2,7 @@
 home: true
 icon: material-symbols:home
 title: 主页
-heroImage: https://cdn.jsdelivr.net/gh/saltapocalypse/CDN/ZJHU_Rocos_Wiki/src.readme.logo_TuringZeroRobotics_Rocos@0.5x.png
-# FIXME: 这个大小尺寸不对啊
-# TODO: 首页还有个小logo到时候改掉，然后还有缩页icon
+heroImage: https://cdn.jsdelivr.net/gh/saltapocalypse/ZJHU_Rocos_Wiki/Assets/src.readme.logo_TuringZeroRobotics_Rocos@0.5x.png
 bgImage: https://theme-hope-assets.vuejs.press/bg/6-light.svg
 bgImageDark: https://theme-hope-assets.vuejs.press/bg/6-dark.svg
 bgImageStyle:
